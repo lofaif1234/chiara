@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8b8c4">
+  <meta name="description" content="Una piccola lettera per Chiara.">
+  <title>Per Chiara ♡</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f7a8b8'/%3E%3Cpath d='M32 51S10 39 10 23c0-11 14-15 22-5 8-10 22-6 22 5 0 16-22 28-22 28Z' fill='%23fffaf1' stroke='%23d92f47' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="hero">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="bow" aria-hidden="true"><i></i><b></b><i></i></div>
+      <p class="eyebrow">PER CHIARA</p>
+      <h1 id="page-title">Ho una piccola<br>cosa per te</h1>
+      <p class="hint">Apri la busta ♡</p>
+
+      <button class="envelope-button" id="open-letter" type="button" aria-label="Apri la lettera per Chiara">
+        <span class="envelope" aria-hidden="true">
+          <span class="envelope-back"></span>
+          <span class="paper-peek">Chiara ♡</span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="seal"><b>♡</b></span>
+        </span>
+      </button>
+      <p class="tap-copy">Clicca sulla lettera</p>
+    </section>
+
+    <p class="footer-note">fatto con il cuore <span>♡</span></p>
+  </main>
+
+  <div class="modal" id="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letter-title" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <article class="letter-card" tabindex="-1">
+      <button class="close-button" type="button" data-close aria-label="Chiudi la lettera">×</button>
+      <p class="letter-kicker">UNA LETTERA SOLO PER TE</p>
+      <h2 id="letter-title">Cara Chiara,</h2>
+      <div class="letter-body">
+        <p>Volevo solo dirti quanto sono felice che tu faccia parte della mia vita. Hai un modo tutto tuo di rendere le giornate più leggere e di farmi vivere momenti belli, anche quando siamo lontani.</p>
+        <p>Quando parliamo o siamo in chiamata mi sento bene, davvero. Riesci sempre a farmi sorridere e a farmi sentire capito, e per me questa è una cosa rara e preziosa.</p>
+        <p>Anche se ci conosciamo da poco, in così poco tempo sei riuscita a diventare una presenza davvero importante per me. Forse è proprio questo il bello: alcune persone arrivano senza fare rumore e riescono comunque a lasciare qualcosa di speciale.</p>
+        <p>Ti voglio un bene enorme e spero che tu non dimentichi mai quanto sei importante per me. Grazie per essere semplicemente tu.</p>
+      </div>
+      <div class="signature">Con tanto affetto, <span>♡</span></div>
+      <div class="letter-doodles" aria-hidden="true">✦ &nbsp; ♡ &nbsp; ✿</div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

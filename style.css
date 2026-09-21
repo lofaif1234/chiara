@@ -1,0 +1,52 @@
+:root { --red:#df334f; --dark-red:#a91f39; --pink:#ff9bad; --pale-pink:#ffdce3; --cream:#fffaf5; --ink:#63333d; }
+* { box-sizing:border-box; }
+html,body { min-height:100%; }
+body { margin:0; overflow-x:hidden; color:var(--ink); background:#ffd7df; font-family:"Fredoka","Trebuchet MS",sans-serif; }
+button { font:inherit; }
+
+.hero { min-height:100svh; position:relative; display:grid; place-items:center; overflow:hidden; background:#ffd7df url("assets/hello-kitty-desktop.png") center/cover no-repeat; }
+
+.intro { width:min(92vw,560px); padding:clamp(28px,6vw,48px) 24px 30px; border:3px solid var(--dark-red); border-radius:32px; background:rgba(255,250,245,.95); box-shadow:10px 10px 0 rgba(169,31,57,.18); text-align:center; animation:arrive .6s ease-out both; }
+.bow { height:35px; display:flex; justify-content:center; align-items:center; margin-bottom:7px; }
+.bow i { width:38px; height:27px; display:block; border:3px solid var(--dark-red); background:var(--red); }
+.bow i:first-child { border-radius:65% 20% 20% 65%; transform:rotate(12deg); }
+.bow i:last-child { border-radius:20% 65% 65% 20%; transform:rotate(-12deg); }
+.bow b { z-index:1; width:24px; height:24px; display:block; margin:0 -4px; border:3px solid var(--dark-red); border-radius:8px; background:var(--pink); transform:rotate(45deg); }
+.eyebrow { margin:0 0 8px; color:var(--red); font-size:13px; font-weight:700; letter-spacing:.22em; }
+h1 { margin:0; color:var(--dark-red); font-size:clamp(38px,8vw,62px); font-weight:700; line-height:.98; letter-spacing:-.035em; }
+.hint { margin:13px 0 0; color:#92515e; font-size:17px; font-weight:500; }
+
+.envelope-button { display:block; width:290px; height:190px; margin:0 auto; padding:0; border:0; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.envelope { position:relative; display:block; width:220px; height:140px; margin:30px auto 0; filter:drop-shadow(0 10px 0 rgba(169,31,57,.12)); transition:transform .25s ease; }
+.envelope-button:hover .envelope { transform:translateY(-6px); }
+.envelope-button:active .envelope { transform:translateY(-2px) scale(.98); }
+.envelope-button:focus-visible { outline:3px solid var(--red); outline-offset:2px; border-radius:20px; }
+.envelope-back { position:absolute; inset:0; border:3px solid var(--dark-red); border-radius:8px; background:#ff778e; }
+.envelope-flap { position:absolute; z-index:3; top:0; left:2px; width:216px; height:104px; background:#ff9bae; clip-path:polygon(0 0,100% 0,50% 100%); filter:drop-shadow(0 2px 0 var(--dark-red)); }
+.envelope-front { position:absolute; z-index:4; inset:0; border:3px solid var(--dark-red); border-radius:8px; background:linear-gradient(145deg,transparent 49.5%,#ff7c92 50%) left/50.5% 100% no-repeat,linear-gradient(215deg,transparent 49.5%,#ff7c92 50%) right/50.5% 100% no-repeat; clip-path:polygon(0 30%,50% 76%,100% 30%,100% 100%,0 100%); }
+.paper-peek { position:absolute; z-index:2; left:20px; right:20px; top:14px; height:90px; padding-top:18px; border:2px solid #e9a4b0; border-radius:4px; color:var(--red); background:var(--cream); font-size:17px; font-weight:600; }
+.seal { position:absolute; z-index:6; left:50%; top:76px; width:44px; height:44px; display:grid; place-items:center; transform:translateX(-50%); border:3px solid var(--dark-red); border-radius:50%; color:white; background:var(--red); font-size:22px; }
+.tap-copy { margin:-4px 0 0; color:#a33b4e; font-size:13px; font-weight:600; }
+.footer-note { position:absolute; bottom:14px; margin:0; color:#8a4d58; font-size:12px; font-weight:500; }
+.footer-note span { color:var(--red); }
+
+.modal { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:20px; visibility:hidden; opacity:0; transition:opacity .25s ease,visibility .25s; }
+.modal.is-open { visibility:visible; opacity:1; }
+.modal-backdrop { position:absolute; inset:0; background:rgba(88,23,37,.48); backdrop-filter:blur(4px); }
+.letter-card { position:relative; width:min(560px,100%); max-height:calc(100svh - 40px); overflow:auto; padding:clamp(52px,7vw,66px) clamp(28px,7vw,62px) 42px; border:3px solid var(--dark-red); border-radius:24px; outline:none; color:#603741; background:var(--cream); box-shadow:12px 12px 0 rgba(91,20,34,.22); transform:translateY(22px) scale(.96); transition:transform .3s ease; }
+.modal.is-open .letter-card { transform:translateY(0) scale(1); }
+.letter-card::before { content:"♡"; position:absolute; left:24px; top:20px; color:var(--red); font-size:28px; font-weight:700; }
+.close-button { position:absolute; top:15px; right:16px; width:38px; height:38px; border:2px solid var(--dark-red); border-radius:50%; color:var(--dark-red); background:var(--pale-pink); cursor:pointer; font-size:25px; line-height:1; }
+.close-button:hover { color:white; background:var(--red); }
+.close-button:focus-visible { outline:3px solid var(--pink); outline-offset:2px; }
+.letter-kicker { margin:0 0 8px; color:var(--red); font-size:12px; font-weight:700; letter-spacing:.16em; text-align:center; }
+.letter-card h2 { margin:0 0 24px; color:var(--dark-red); font-size:clamp(34px,7vw,46px); line-height:1; text-align:center; }
+.letter-body { font-size:clamp(16px,2.2vw,18px); line-height:1.65; }
+.letter-body p { margin:0 0 17px; }
+.signature { margin-top:24px; color:var(--dark-red); font-size:19px; font-weight:600; text-align:right; }
+.signature span { color:var(--red); }
+.letter-doodles { margin-top:26px; color:var(--red); text-align:center; letter-spacing:.25em; }
+body.modal-open { overflow:hidden; }
+@keyframes arrive { from { opacity:0; transform:translateY(12px); } }
+@media (max-width:600px) { .hero { padding:22px 0 52px; background-image:url("assets/hello-kitty-mobile.png"); background-position:center; } .intro { width:calc(100% - 28px); padding-inline:12px; border-radius:24px; } .envelope-button { width:260px; } .letter-card { border-radius:18px; } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
